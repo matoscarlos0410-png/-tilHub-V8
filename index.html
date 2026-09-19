@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="ÚtilHub V8 - herramientas útiles para estudiar, organizar, comprar y resolver tareas cotidianas.">
+  <title>ÚtilHub V8 | Herramientas útiles</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <a href="#inicio" class="logo">
+      <span class="logo-icon">U</span>
+      <span>Útil<span>Hub</span></span>
+      <small>V8</small>
+    </a>
+
+    <nav id="nav">
+      <a href="#herramientas">Herramientas</a>
+      <a href="#comida">Comida</a>
+      <a href="#compras">Compras</a>
+      <a href="#cerca">Cerca de mí</a>
+      <a href="#configuracion">Configuración</a>
+    </nav>
+
+    <div class="header-actions">
+      <button id="themeBtn" class="icon-btn" title="Cambiar tema">🌙</button>
+      <button id="menuBtn" class="icon-btn menu-btn">☰</button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section id="inicio" class="hero">
+  <div class="hero-content">
+    <span class="badge">✨ ÚtilHub V8</span>
+
+    <h1>Todo lo útil en <span>un solo lugar</span></h1>
+
+    <p>
+      Herramientas para estudiar, calcular, organizar,
+      buscar lugares, controlar gastos y mucho más.
+    </p>
+
+    <div class="hero-search">
+      <span>🔎</span>
+      <input id="globalSearch" type="search"
+        placeholder="¿Qué herramienta necesitas?">
+    </div>
+
+    <div class="quick-actions">
+      <a href="#herramientas" class="btn primary">🚀 Explorar herramientas</a>
+      <a href="#cerca" class="btn secondary">📍 Cerca de mí</a>
+    </div>
+
+    <div class="connection">
+      <span id="connectionDot">🟢</span>
+      <span id="connectionText">Conectado</span>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div><strong>30+</strong><span>Herramientas</span></div>
+  <div><strong>100%</strong><span>Web</span></div>
+  <div><strong>V8</strong><span>Actualizada</span></div>
+  <div><strong>💾</strong><span>Datos locales</span></div>
+</section>
+
+<section class="section" id="herramientas">
+
+  <div class="section-title">
+    <span class="badge">🧰 Herramientas</span>
+    <h2>Herramientas útiles</h2>
+    <p>Busca y utiliza la herramienta que necesites.</p>
+  </div>
+
+  <div class="categories">
+    <button class="category active" data-filter="all">Todas</button>
+    <button class="category" data-filter="calculo">Cálculo</button>
+    <button class="category" data-filter="estudio">Estudio</button>
+    <button class="category" data-filter="dinero">Dinero</button>
+    <button class="category" data-filter="organizacion">Organización</button>
+    <button class="category" data-filter="texto">Texto</button>
+    <button class="category" data-filter="utilidades">Utilidades</button>
+  </div>
+
+  <div class="tools-grid">
+
+    <!-- CALCULADORA -->
+    <article class="tool-card" data-category="calculo"
+      data-keywords="calculadora operaciones sumar restar multiplicar dividir">
+
+      <div class="tool-head">
+        <span class="tool-icon">🧮</span>
+        <div>
+          <h3>Calculadora</h3>
+          <p>Operaciones matemáticas</p>
+        </div>
+      </div>
+
+      <input id="calcInput" class="input" placeholder="Ej: (25+15)*2">
+
+      <div class="button-row">
+        <button id="calcBtn" class="btn primary">Calcular</button>
+        <button id="calcClear" class="btn secondary">Limpiar</button>
+      </div>
+
+      <div id="calcResult" class="result">Resultado: —</div>
+    </article>
+
+    <!-- PORCENTAJE -->
+    <article class="tool-card" data-category="calculo"
+      data-keywords="porcentaje calcular porcentaje">
+
+      <div class="tool-head">
+        <span class="tool-icon">%</span>
+        <div>
+          <h3>Porcentaje</h3>
+          <p>Calcula porcentajes rápidamente</p>
+        </div>
+      </div>
+
+      <input id="percentNumber" class="input" type="number" placeholder="Número">
+      <input id="percentValue" class="input" type="number" placeholder="Porcentaje">
+
+      <button id="percentBtn" class="btn primary">Calcular</button>
+
+      <div id="percentResult" class="result">Resultado: —</div>
+    </article>
+
+    <!-- DESCUENTO -->
+    <article class="tool-card" data-category="dinero"
+      data-keywords="descuento precio oferta rebaja">
+
+      <div class="tool-head">
+        <span class="tool-icon">🏷️</span>
+        <div>
+          <h3>Descuento</h3>
+          <p>Calcula el precio final</p>
+        </div>
+      </div>
+
+      <input id="discountPrice" class="input" type="number" placeholder="Precio">
+      <input id="discountPercent" class="input" type="number" placeholder="Descuento %">
+
+      <button id="discountBtn" class="btn primary">Calcular</button>
+
+      <div id="discountResult" class="result">Resultado: —</div>
+    </article>
+
+    <!-- REGLA DE 3 -->
+    <article class="tool-card" data-category="calculo"
+      data-keywords="regla tres proporcionalidad">
+
+      <div class="tool-head">
+        <span class="tool-icon">📐</span>
+        <div>
+          <h3>Regla de 3</h3>
+          <p>Calcula proporciones</p>
+        </div>
+      </div>
+
+      <div class="four-inputs">
+        <input id="r3a" class="input" type="number" placeholder="A">
+        <input id="r3b" class="input" type="number" placeholder="B">
+        <input id="r3c" class="input" type="number" placeholder="C">
+        <input id="r3d" class="input" type="number" placeholder="X" disabled>
+      </div>
+
+      <button id="ruleBtn" class="btn primary">Resolver</button>
+      <div id="ruleResult" class="result">X = —</div>
+    </article>
+
+    <!-- CONVERSOR -->
+    <article class="tool-card" data-category="calculo"
+      data-keywords="convertidor unidades metros kilos litros">
+
+      <div class="tool-head">
+        <span class="tool-icon">🔄</span>
+        <div>
+          <h3>Conversor</h3>
+          <p>Longitud, peso, volumen y datos</p>
+        </div>
+      </div>
+
+      <select id="convertType" class="input">
+        <option value="length">Longitud</option>
+        <option value="weight">Peso</option>
+        <option value="volume">Volumen</option>
+        <option value="data">Datos</option>
+      </select>
+
+      <div class="two-inputs">
+        <input id="convertValue" class="input" type="number" placeholder="Cantidad">
+        <select id="convertFrom" class="input"></select>
+      </div>
+
+      <select id="convertTo" class="input"></select>
+
+      <button id="convertBtn" class="btn primary">Convertir</button>
+      <div id="convertResult" class="result">Resultado: —</div>
+    </article>
+
+    <!-- TEMPERATURA -->
+    <article class="tool-card" data-category="calculo"
+      data-keywords="temperatura celsius fahrenheit kelvin">
+
+      <div class="tool-head">
+        <span class="tool-icon">🌡️</span>
+        <div>
+          <h3>Temperatura</h3>
+          <p>Convierte °C, °F y K</p>
+        </div>
+      </div>
+
+      <input id="tempValue" class="input" type="number" placeholder="Temperatura">
+
+      <select id="tempFrom" class="input">
+        <option value="C">Celsius</option>
+        <option value="F">Fahrenheit</option>
+        <option value="K">Kelvin</option>
+      </select>
+
+      <select id="tempTo" class="input">
+        <option value="F">Fahrenheit</option>
+        <option value="C">Celsius</option>
+        <option value="K">Kelvin</option>
+      </select>
+
+      <button id="tempBtn" class="btn primary">Convertir</button>
+      <div id="tempResult" class="result">Resultado: —</div>
+    </article>
+
+    <!-- EDAD -->
+    <article class="tool-card" data-category="organizacion"
+      data-keywords="edad cumpleaños años">
+
+      <div class="tool-head">
+        <span class="tool-icon">🎂</span>
+        <div>
+          <h3>Calculadora de edad</h3>
+          <p>Calcula tu edad</p>
+        </div>
+      </div>
+
+      <input id="birthDate" class="input" type="date">
+      <button id="ageBtn" class="btn primary">Calcular edad</button>
+
+      <div id="ageResult" class="result">Resultado: —</div>
+    </article>
+
+    <!-- FECHAS -->
+    <article class="tool-card" data-category="organizacion"
+      data-keywords="fecha días diferencia calendario">
+
+      <div class="tool-head">
+        <span class="tool-icon">📅</span>
+        <div>
+          <h3>Diferencia de fechas</h3>
+          <p>Cuenta los días entre fechas</p>
+        </div>
+      </div>
+
+      <input id="date1" class="input" type="date">
+      <input id="date2" class="input" type="date">
+
+      <button id="dateBtn" class="btn primary">Calcular</button>
+      <div id="dateResult" class="result">Resultado: —</div>
+    </article>
+
+    <!-- PROPINA -->
+    <article class="tool-card" data-category="dinero"
+      data-keywords="propina restaurante">
+
+      <div class="tool-head">
+        <span class="tool-icon">🍽️</span>
+        <div>
+          <h3>Propina</h3>
+          <p>Calcula una propina</p>
+        </div>
+      </div>
+
+      <input id="tipTotal" class="input" type="number" placeholder="Total">
+      <input id="tipPercent" class="input" type="number" placeholder="Propina %">
+
+      <button id="tipBtn" class="btn primary">Calcular</button>
+      <div id="tipResult" class="result">Resultado: —</div>
+    </article>
+
+    <!-- DIVIDIR CUENTA -->
+    <article class="tool-card" data-category="dinero"
+      data-keywords="dividir cuenta personas">
+
+      <div class="tool-head">
+        <span class="tool-icon">👥</span>
+        <div>
+          <h3>Dividir cuenta</h3>
+          <p>Reparte un total entre personas</p>
+        </div>
+      </div>
+
+      <input id="splitTotal" class="input" type="number" placeholder="Total">
+      <input id="splitPeople" class="input" type="number" min="1" placeholder="Personas">
+
+      <button id="splitBtn" class="btn primary">Dividir</button>
+      <div id="splitResult" class="result">Resultado: —</div>
+    </article>
+
+    <!-- MONEDA -->
+    <article class="tool-card" data-category="dinero"
+      data-keywords="moneda soles dólares euros cambio">
+
+      <div class="tool-head">
+        <span class="tool-icon">💱</span>
+        <div>
+          <h3>Conversor de monedas</h3>
+          <p>Consulta tasas mediante Internet</p>
+        </div>
+      </div>
+
+      <input id="currencyAmount" class="input" type="number" value="1">
+
+      <div class="two-inputs">
+        <select id="currencyFrom" class="input">
+          <option>USD</option>
+          <option>PEN</option>
+          <option>EUR</option>
+          <option>GBP</option>
+          <option>JPY</option>
+          <option>BRL</option>
+          <option>MXN</option>
+          <option>COP</option>
+          <option>CLP</option>
+        </select>
+
+        <select id="currencyTo" class="input">
+          <option>PEN</option>
+          <option>USD</option>
+          <option>EUR</option>
+          <option>GBP</option>
+          <option>JPY</option>
+          <option>BRL</option>
+          <option>MXN</option>
+          <option>COP</option>
+          <option>CLP</option>
+        </select>
+      </div>
+
+      <button id="currencyBtn" class="btn primary">Convertir</button>
+      <div id="currencyResult" class="result">Resultado: —</div>
+    </article>
+
+    <!-- PRESUPUESTO -->
+    <article class="tool-card wide" data-category="dinero"
+      data-keywords="presupuesto gastos ingresos dinero">
+
+      <div class="tool-head">
+        <span class="tool-icon">💰</span>
+        <div>
+          <h3>Control de gastos</h3>
+          <p>Registra ingresos y gastos en este dispositivo</p>
+        </div>
+      </div>
+
+      <div class="three-inputs">
+        <select id="budgetType" class="input">
+          <option value="income">Ingreso</option>
+          <option value="expense">Gasto</option>
+        </select>
+
+        <input id="budgetAmount" class="input" type="number" placeholder="Monto">
+
+        <input id="budgetNote" class="input" placeholder="Descripción">
+      </div>
+
+      <button id="budgetAdd" class="btn primary">Agregar movimiento</button>
+
+      <div class="money-summary">
+        <div><span>Ingresos</span><strong id="incomeTotal">S/ 0.00</strong></div>
+        <div><span>Gastos</span><strong id="expenseTotal">S/ 0.00</strong></div>
+        <div><span>Balance</span><strong id="balanceTotal">S/ 0.00</strong></div>
+      </div>
+
+      <div id="budgetList" class="list"></div>
+    </article>
+
+    <!-- TEMPORIZADOR -->
+    <article class="tool-card" data-category="organizacion"
+      data-keywords="temporizador cuenta regresiva tiempo">
+
+      <div class="tool-head">
+        <span class="tool-icon">⏱️</span>
+        <div>
+          <h3>Temporizador</h3>
+          <p>Cuenta regresiva</p>
+        </div>
+      </div>
+
+      <div class="time-display" id="timerDisplay">00:05:00</div>
+
+      <div class="three-inputs">
+        <input id="timerH" class="input" type="number" min="0" value="0" placeholder="Horas">
+        <input id="timerM" class="input" type="number" min="0" value="5" placeholder="Min">
+        <input id="timerS" class="input" type="number" min="0" value="0" placeholder="Seg">
+      </div>
+
+      <div class="button-row">
+        <button id="timerStart" class="btn primary">▶ Iniciar</button>
+        <button id="timerPause" class="btn secondary">⏸ Pausar</button>
+        <button id="timerReset" class="btn secondary">↺ Reiniciar</button>
+      </div>
+    </article>
+
+    <!-- CRONÓMETRO -->
+    <article class="tool-card" data-category="organizacion"
+      data-keywords="cronometro stopwatch tiempo">
+
+      <div class="tool-head">
+        <span class="tool-icon">⏲️</span>
+        <div>
+          <h3>Cronómetro</h3>
+          <p>Mide el tiempo</p>
+        </div>
+      </div>
+
+      <div class="time-display" id="stopwatchDisplay">00:00:00.00</div>
+
+      <div class="button-row">
+        <button id="stopStart" class="btn primary">▶ Iniciar</button>
+        <button id="stopPause" class="btn secondary">⏸ Pausar</button>
+        <button id="stopReset" class="btn secondary">↺ Reiniciar</button>
+      </div>
+
+      <button id="lapBtn" class="btn secondary full">🏁 Vuelta</button>
+      <div id="laps" class="laps"></div>
+    </article>
+
+    <!-- NOTAS -->
+    <article class="tool-card wide" data-category="organizacion"
+      data-keywords="notas escribir guardar apuntes">
+
+      <div class="tool-head">
+        <span class="tool-icon">📝</span>
+        <div>
+          <h3>Notas</h3>
+          <p>Guarda apuntes en tu navegador</p>
+        </div>
+      </div>
+
+      <input id="noteTitle" class="input" placeholder="Título">
+      <textarea id="noteText" class="textarea" placeholder="Escribe tu nota..."></textarea>
+
+      <button id="saveNote" class="btn primary">💾 Guardar nota</button>
+
+      <div id="notesList" class="list"></div>
+    </article>
+
+    <!-- TAREAS -->
+    <article class="tool-card" data-category="organizacion"
+      data-keywords="tareas pendientes lista tareas">
+
+      <div class="tool-head">
+        <span class="tool-icon">✅</span>
+        <div>
+          <h3>Tareas</h3>
+          <p>Organiza tus pendientes</p>
+        </div>
+      </div>
+
+      <div class="inline-form">
+        <input id="taskInput" class="input" placeholder="Nueva tarea">
+        <button id="addTask" class="btn primary">Agregar</button>
+      </div>
+
+      <div id="tasksList" class="list"></div>
+    </article>
+
+    <!-- LISTA DE COMPRAS -->
+    <article class="tool-card" data-category="organizacion"
+      data-keywords="compras lista supermercado productos">
+
+      <div class="tool-head">
+        <span class="tool-icon">🛒</span>
+        <div>
+          <h3>Lista de compras</h3>
+          <p>Organiza lo que necesitas comprar</p>
+        </div>
+      </div>
+
+      <div class="inline-form">
+        <input id="shoppingInput" class="input" placeholder="Producto">
+        <input id="shoppingQty" class="input small" type="number" value="1" min="1">
+        <button id="addShopping" class="btn primary">+</button>
+      </div>
+
+      <div id="shoppingList" class="list"></div>
+    </article>
+
+    <!-- CONTRASEÑA -->
+    <article class="tool-card" data-category="utilidades"
+      data-keywords="contraseña password generador">
+
+      <div class="tool-head">
+        <span class="tool-icon">🔐</span>
+        <div>
+          <h3>Generador de contraseñas</h3>
+          <p>Crea una contraseña aleatoria</p>
+        </div>
+      </div>
+
+      <input id="passwordLength" class="input" type="number" min="8" max="64" value="16">
+
+      <button id="generatePassword" class="btn primary">Generar</button>
+
+      <div class="password-box">
+        <input id="passwordOutput" class="input" readonly>
+        <button id="copyPassword" class="btn secondary">Copiar</button>
+      </div>
+
+      <small>No compartas tus contraseñas.</small>
+    </article>
+
+    <!-- QR -->
+    <article class="tool-card" data-category="utilidades"
+      data-keywords="qr código qr enlace">
+
+      <div class="tool-head">
+        <span class="tool-icon">▦</span>
+        <div>
+          <h3>Código QR</h3>
+          <p>Convierte texto o enlaces en QR</p>
+        </div>
+      </div>
+
+      <input id="qrText" class="input" placeholder="Texto o enlace">
+      <select id="qrSize" class="input">
+        <option value="200">200 × 200</option>
+        <option value="300" selected>300 × 300</option>
+        <option value="500">500 × 500</option>
+      </select>
+
+      <button id="qrBtn" class="btn primary">Generar QR</button>
+
+      <div id="qrResult" class="qr-result"></div>
+    </article>
+
+    <!-- ALEATORIO -->
+    <article class="tool-card" data-category="utilidades"
+      data-keywords="número aleatorio random">
+
+      <div class="tool-head">
+        <span class="tool-icon">🎲</span>
+        <div>
+          <h3>Número aleatorio</h3>
+          <p>Genera un número</p>
+        </div>
+      </div>
+
+      <div class="two-inputs">
+        <input id="randomMin" class="input" type="number" value="1">
+        <input id="randomMax" class="input" type="number" value="100">
+      </div>
+
+      <button id="randomBtn" class="btn primary">Generar</button>
+      <div id="randomResult" class="big-result">—</div>
+    </article>
+
+    <!-- DADOS -->
+    <article class="tool-card" data-category="utilidades"
+      data-keywords="dado dados juego">
+
+      <div class="tool-head">
+        <span class="tool-icon">🎲</span>
+        <div>
+          <h3>Dados</h3>
+          <p>Lanza uno o varios dados</p>
+        </div>
+      </div>
+
+      <select id="diceCount" class="input">
+        <option value="1">1 dado</option>
+        <option value="2">2 dados</option>
+        <option value="3">3 dados</option>
+        <option value="4">4 dados</option>
+        <option value="5">5 dados</option>
+      </select>
+
+      <button id="diceBtn" class="btn primary">Lanzar</button>
+      <div id="diceResult" class="big-result">🎲</div>
+    </article>
+
+    <!-- DICCIONARIO -->
+    <article class="tool-card" data-category="estudio"
+      data-keywords="diccionario palabras definición español inglés">
+
+      <div class="tool-head">
+        <span class="tool-icon">📖</span>
+        <div>
+          <h3>Diccionario</h3>
+          <p>Consulta palabras en español o inglés</p>
+        </div>
+      </div>
+
+      <div class="two-inputs">
+        <input id="dictionaryWord" class="input" placeholder="Palabra">
+        <select id="dictionaryLang" class="input">
+          <option value="es">Español</option>
+          <option value="en">Inglés</option>
+        </select>
+      </div>
+
+      <button id="dictionaryBtn" class="btn primary">Buscar</button>
+      <div id="dictionaryResult" class="result">Resultado: —</div>
+    </article>
+
+    <!-- CONTADOR -->
+    <article class="tool-card" data-category="texto"
+      data-keywords="contador palabras caracteres texto">
+
+      <div class="tool-head">
+        <span class="tool-icon">🔢</span>
+        <div>
+          <h3>Contador de texto</h3>
+          <p>Palabras, caracteres y líneas</p>
+        </div>
+      </div>
+
+      <textarea id="textCounter" class="textarea" placeholder="Escribe o pega tu texto..."></textarea>
+
+      <div class="text-stats">
+        <span>Palabras: <b id="wordCount">0</b></span>
+        <span>Caracteres: <b id="charCount">0</b></span>
+        <span>Líneas: <b id="lineCount">0</b></span>
+      </div>
+    </article>
+
+    <!-- MAYÚSCULAS -->
+    <article class="tool-card" data-category="texto"
+      data-keywords="mayúsculas minúsculas texto transformar">
+
+      <div class="tool-head">
+        <span class="tool-icon">🔤</span>
+        <div>
+          <h3>Conversor de texto</h3>
+          <p>Cambia el formato del texto</p>
+        </div>
+      </div>
+
+      <textarea id="caseText" class="textarea" placeholder="Escribe tu texto..."></textarea>
+
+      <div class="button-row wrap">
+        <button id="upperBtn" class="btn secondary">MAYÚSCULAS</button>
+        <button id="lowerBtn" class="btn secondary">minúsculas</button>
+        <button id="titleBtn" class="btn secondary">Título</button>
+      </div>
+    </article>
+
+    <!-- COLOR -->
+    <article class="tool-card" data-category="utilidades"
+      data-keywords="color hex colores">
+
+      <div class="tool-head">
+        <span class="tool-icon">🎨</span>
+        <div>
+          <h3>Generador de colores</h3>
+          <p>Genera un color aleatorio</p>
+        </div>
+      </div>
+
+      <div id="colorPreview" class="color-preview"></div>
+      <div id="colorCode" class="big-result">#000000</div>
+
+      <button id="colorBtn" class="btn primary">Generar color</button>
+      <button id="copyColor" class="btn secondary full">Copiar código</button>
+    </article>
+
+    <!-- URL -->
+    <article class="tool-card" data-category="utilidades"
+      data-keywords="url enlace codificar decodificar">
+
+      <div class="tool-head">
+        <span class="tool-icon">🔗</span>
+        <div>
+          <h3>Herramienta URL</h3>
+          <p>Codifica o decodifica texto</p>
+        </div>
+      </div>
+
+      <textarea id="urlText" class="textarea" placeholder="Texto o URL..."></textarea>
+
+      <div class="button-row">
+        <button id="encodeBtn" class="btn primary">Codificar</button>
+        <button id="decodeBtn" class="btn secondary">Decodificar</button>
+      </div>
+    </article>
+
+    <!-- ORGANIZADOR DE ESTUDIO -->
+    <article class="tool-card wide" data-category="estudio"
+      data-keywords="estudio organizador materia examen tarea">
+
+      <div class="tool-head">
+        <span class="tool-icon">📚</span>
+        <div>
+          <h3>Organizador de estudio</h3>
+          <p>Registra temas y actividades</p>
+        </div>
+      </div>
+
+      <div class="three-inputs">
+        <input id="studySubject" class="input" placeholder="Curso">
+        <input id="studyTopic" class="input" placeholder="Tema">
+        <input id="studyDate" class="input" type="date">
+      </div>
+
+      <textarea id="studyNotes" class="textarea" placeholder="Notas..."></textarea>
+
+      <button id="addStudy" class="btn primary">Agregar</button>
+
+      <div id="studyList" class="list"></div>
+    </article>
+
+  </div>
+</section>
+
+<!-- COMIDA -->
+<section id="comida" class="section special-section">
+  <div class="section-title">
+    <span class="badge">🍔 Comida</span>
+    <h2>Encuentra comida</h2>
+    <p>ÚtilHub te ayuda a buscar lugares. Tú decides dónde pedir.</p>
+  </div>
+
+  <div class="finder">
+    <input id="foodSearch" class="input"
+      placeholder="Ej: pizza, hamburguesas, menú, cevichería...">
+
+    <select id="foodType" class="input">
+      <option value="">Todos</option>
+      <option value="restaurante">Restaurantes</option>
+      <option value="pizza">Pizza</option>
+      <option value="hamburguesas">Hamburguesas</option>
+      <option value="pollo">Pollo</option>
+      <option value="café">Cafeterías</option>
+      <option value="postres">Postres</option>
+    </select>
+
+    <div class="button-row">
+      <button id="foodMaps" class="btn primary">🗺️ Buscar lugares</button>
+      <button id="foodNear" class="btn secondary">📍 Cerca de mí</button>
+      <button id="foodOrder" class="btn secondary">🛍️ Buscar para pedir</button>
+    </div>
+  </div>
+</section>
+
+<!-- COMPRAS -->
+<section id="compras" class="section">
+  <div class="section-title">
+    <span class="badge">🛒 Compras</span>
+    <h2>Busca productos y tiendas</h2>
+    <p>ÚtilHub encuentra opciones; la compra la realizas tú.</p>
+  </div>
+
+  <div class="finder">
+    <input id="shopSearch" class="input"
+      placeholder="Ej: laptop, zapatillas, mochila, supermercado...">
+
+    <div class="button-row">
+      <button id="shopSearchBtn" class="btn primary">🔎 Buscar producto</button>
+      <button id="shopMapsBtn" class="btn secondary">🗺️ Buscar tiendas</button>
+      <button id="shopNearBtn" class="btn secondary">📍 Tiendas cercanas</button>
+    </div>
+  </div>
+</section>
+
+<!-- CERCA -->
+<section id="cerca" class="section special-section">
+  <div class="section-title">
+    <span class="badge">📍 Cerca de mí</span>
+    <h2>Busca servicios cercanos</h2>
+    <p>La ubicación solo se solicita cuando pulsas el botón.</p>
+  </div>
+
+  <div class="finder">
+    <input id="localSearch" class="input"
+      placeholder="Ej: farmacia, banco, supermercado...">
+
+    <div class="local-buttons">
+      <button class="local-btn" data-place="restaurante">🍽️ Restaurantes</button>
+      <button class="local-btn" data-place="supermercado">🛒 Supermercados</button>
+      <button class="local-btn" data-place="farmacia">💊 Farmacias</button>
+      <button class="local-btn" data-place="banco">🏦 Bancos</button>
+      <button class="local-btn" data-place="gasolinera">⛽ Gasolineras</button>
+      <button class="local-btn" data-place="ferretería">🔧 Ferreterías</button>
+    </div>
+
+    <button id="localNear" class="btn primary full">📍 Buscar cerca de mí</button>
+  </div>
+
+  <div id="locationStatus" class="result">
+    Ubicación: todavía no solicitada.
+  </div>
+</section>
+
+<!-- RESPALDO -->
+<section id="configuracion" class="section">
+  <div class="section-title">
+    <span class="badge">⚙️ V8</span>
+    <h2>Configuración y respaldo</h2>
+    <p>Protege los datos que ÚtilHub guarda en este navegador.</p>
+  </div>
+
+  <div class="backup-grid">
+    <div class="backup-card">
+      <span>💾</span>
+      <h3>Exportar datos</h3>
+      <p>Descarga tus notas, tareas, listas y registros.</p>
+      <button id="exportData" class="btn primary">📥 Exportar</button>
+    </div>
+
+    <div class="backup-card">
+      <span>📤</span>
+      <h3>Importar datos</h3>
+      <p>Recupera un respaldo anterior.</p>
+      <input id="importFile" type="file" accept=".json" hidden>
+      <button id="importData" class="btn secondary">📤 Importar</button>
+    </div>
+
+    <div class="backup-card">
+      <span>🗑️</span>
+      <h3>Eliminar datos</h3>
+      <p>Borra los datos locales de ÚtilHub.</p>
+      <button id="clearData" class="btn danger">Eliminar datos</button>
+    </div>
+  </div>
+</section>
+
+<section class="section faq">
+  <div class="section-title">
+    <span class="badge">❓ Ayuda</span>
+    <h2>¿Cómo funciona ÚtilHub V8?</h2>
+  </div>
+
+  <details>
+    <summary>¿ÚtilHub compra productos por mí?</summary>
+    <p>No. ÚtilHub te ayuda a buscar productos y tiendas. Tú decides y realizas la compra.</p>
+  </details>
+
+  <details>
+    <summary>¿Guarda mis notas y tareas?</summary>
+    <p>Sí. Se guardan localmente en el navegador de este dispositivo.</p>
+  </details>
+
+  <details>
+    <summary>¿Qué ocurre si no tengo Internet?</summary>
+    <p>Las herramientas locales continúan funcionando. Algunas funciones externas, como determinadas búsquedas y tasas de cambio, necesitan Internet.</p>
+  </details>
+
+  <details>
+    <summary>¿Puedo recuperar mis datos?</summary>
+    <p>Sí, puedes utilizar Exportar datos para crear un respaldo e Importar datos para recuperarlo.</p>
+  </details>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-logo">ÚtilHub <span>V8</span></div>
+  <p>Herramientas útiles para tu día a día.</p>
+  <p class="footer-small">© 2026 ÚtilHub · Versión 8</p>
+</footer>
+
+<div id="toast" class="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
